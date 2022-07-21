@@ -48,6 +48,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnAbilityButton(float i)
+    {
+        animator.SetTrigger("Ability");
+        animator.SetFloat("Number", i);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
