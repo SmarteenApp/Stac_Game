@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private KeyCode jumpKey;
 
     Animator animator;
+    Rigidbody2D rb2D;
+
 
     bool isWalk;
     bool isJump;
@@ -17,6 +19,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
@@ -42,7 +45,8 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(jumpKey) && isJump == false)
         {
-            transform.Translate(new Vector2(0, jumpForce * Time.deltaTime));
+            // transform.Translate(new Vector2(0, jumpForce * Time.deltaTime));
+            rb2D.AddForce(Vector2.up * jumpForce);
             isJump = true;
             animator.SetTrigger("Jump");
         }

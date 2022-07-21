@@ -598,7 +598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 200
+  jumpForce: 500
   jumpKey: 32
 --- !u!50 &1625695894
 Rigidbody2D:
