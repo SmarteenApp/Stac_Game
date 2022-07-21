@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private KeyCode jumpKey;
 
     Animator animator;
-    Rigidbody2D rb;
 
     bool isWalk;
     bool isJump;
@@ -32,7 +31,7 @@ public class PlayerController : MonoBehaviour
     {
         float h = Input.GetAxisRaw("Horizontal");
 
-        transform.Translate(new Vector2(h,0) * speed * Time.deltaTime);
+        transform.Translate(new Vector2(h, 0) * speed * Time.deltaTime);
 
         isWalk = h != 0;
 
@@ -43,21 +42,19 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(jumpKey) && isJump == false)
         {
-            for (int i = 0; i < 10; i++)
-                transform.Translate(Vector2.up * jumpForce * Time.deltaTime);
+            transform.Translate(new Vector2(0, jumpForce * Time.deltaTime));
             isJump = true;
             animator.SetTrigger("Jump");
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collider)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collider.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground"))
         {
             isJump = false;
         }
     }
-
 }
 
 
