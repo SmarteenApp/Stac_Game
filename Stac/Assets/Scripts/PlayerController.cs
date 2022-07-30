@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce; // 점프력
 
     [SerializeField] private KeyCode jumpKey; // 점프 키
+
+    [SerializeField] private Slider moveSlider; // 움직임 슬라이더
 
     Animator animator;
     Rigidbody2D rb2D;
@@ -35,13 +38,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Move()
     {
-        float h = Input.GetAxisRaw("Horizontal");
-
-        transform.Translate(new Vector2(h, 0) * speed * Time.deltaTime);
-
-        isWalk = h != 0;
-
-        animator.SetBool("isWalk", isWalk);
+        transform.Translate(new Vector2(moveSlider.value, 0) * speed * Time.deltaTime);
+        animator.SetBool("isWalk", true);
     }
 
     /// <summary>
@@ -52,6 +50,16 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(jumpKey) && isJump == false)
         {
             // transform.Translate(new Vector2(0, jumpForce * Time.deltaTime));
+            rb2D.AddForce(Vector2.up * jumpForce);
+            isJump = true;
+            animator.SetTrigger("Jump");
+        }
+    }
+
+    public void OnJumpButton()
+    {
+        if (isJump == false)
+        {
             rb2D.AddForce(Vector2.up * jumpForce);
             isJump = true;
             animator.SetTrigger("Jump");
