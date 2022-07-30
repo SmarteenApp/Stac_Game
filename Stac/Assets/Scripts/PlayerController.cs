@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float jumpForce;
+    [SerializeField] private float speed; // 속도
+    [SerializeField] private float jumpForce; // 점프력
 
-    [SerializeField] private KeyCode jumpKey;
+    [SerializeField] private KeyCode jumpKey; // 점프 키
 
     Animator animator;
     Rigidbody2D rb2D;
@@ -30,6 +30,9 @@ public class PlayerController : MonoBehaviour
         Jump();
     }
 
+    /// <summary>
+    /// 움직임
+    /// </summary>
     private void Move()
     {
         float h = Input.GetAxisRaw("Horizontal");
@@ -41,6 +44,9 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isWalk", isWalk);
     }
 
+    /// <summary>
+    /// 점프
+    /// </summary>
     private void Jump()
     {
         if (Input.GetKeyDown(jumpKey) && isJump == false)
@@ -52,6 +58,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 능력
+    /// </summary>
+    /// <param name="i"></param>
     private void OnAbilityButton(float i)
     {
         animator.SetTrigger("Ability");
