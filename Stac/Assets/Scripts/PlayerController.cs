@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     Rigidbody2D rb2D;
 
-
     bool isWalk;
     bool isJump;
 
@@ -39,7 +38,7 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         transform.Translate(new Vector2(moveSlider.value, 0) * speed * Time.deltaTime);
-        animator.SetBool("isWalk", true);
+        animator.SetBool("isWalk", moveSlider.value != 0);
     }
 
     /// <summary>
