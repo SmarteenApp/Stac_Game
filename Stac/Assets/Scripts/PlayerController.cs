@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Slider moveSlider; // 움직임 슬라이더
 
+    [SerializeField] private GameObject deadPanel; // 죽음 패널
+
     Animator animator;
     Rigidbody2D rb2D;
 
@@ -75,11 +77,28 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Number", i);
     }
 
+    private void Dead()
+    {
+        deadPanel.SetActive(true);
+        transform.position = Vector3.zero;
+        StartCoroutine(DeadDelay());
+    }
+
+    private IEnumerator DeadDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        deadPanel.SetActive(false);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             isJump = false;
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Dead();
         }
     }
 }
