@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,9 +10,12 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private KeyCode jumpKey; // 점프 키
 
+    [SerializeField] private Slider moveSlider; // 움직임 슬라이더
+
+    [SerializeField] private GameObject deadPanel; // 죽음 패널
+
     Animator animator;
     Rigidbody2D rb2D;
-
 
     bool isWalk;
     bool isJump;
@@ -35,13 +39,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Move()
     {
-        float h = Input.GetAxisRaw("Horizontal");
-
-        transform.Translate(new Vector2(h, 0) * speed * Time.deltaTime);
-
-        isWalk = h != 0;
-
-        animator.SetBool("isWalk", isWalk);
+        transform.Translate(new Vector2(moveSlider.value, 0) * speed * Time.deltaTime);
+        animator.SetBool("isWalk", moveSlider.value != 0);
     }
 
     /// <summary>
@@ -58,6 +57,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnJumpButton()
+    {
+        if (isJump == false)
+        {
+            rb2D.AddForce(Vector2.up * jumpForce);
+            isJump = true;
+            animator.SetTrigger("Jump");
+        }
+    }
+
     /// <summary>
     /// 능력
     /// </summary>
@@ -68,11 +77,28 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Number", i);
     }
 
+    private void Dead()
+    {
+        deadPanel.SetActive(true);
+        transform.position = Vector3.zero;
+        StartCoroutine(DeadDelay());
+    }
+
+    private IEnumerator DeadDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        deadPanel.SetActive(false);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             isJump = false;
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Dead();
         }
     }
 }
