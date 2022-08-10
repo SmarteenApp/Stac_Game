@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GameObject deadPanel; // 죽음 패널
 
+    [SerializeField] private Transform spawnPoint; // 죽음 스폰 포인트
+
     Animator animator;
     Rigidbody2D rb2D;
 
@@ -25,6 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        transform.position = spawnPoint.position;
     }
 
     // Update is called once per frame
@@ -80,7 +84,7 @@ public class PlayerController : MonoBehaviour
     private void Dead()
     {
         deadPanel.SetActive(true);
-        transform.position = Vector3.zero;
+        transform.position = spawnPoint.position;
         StartCoroutine(DeadDelay());
     }
 
@@ -99,6 +103,10 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Dead();
+        }
+        if (collision.gameObject.CompareTag("Finish"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex == 1 ? 0 : 1);
         }
     }
 }
