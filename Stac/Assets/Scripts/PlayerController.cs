@@ -14,13 +14,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Slider moveSlider; // 움직임 슬라이더
 
     [SerializeField] private GameObject deadPanel; // 죽음 패널
+    [SerializeField] private GameObject shadow; // 그림자
 
     [SerializeField] private Transform spawnPoint; // 죽음 스폰 포인트
 
     Animator animator;
     Rigidbody2D rb2D;
 
-    bool isWalk;
     bool isJump;
 
     // Start is called before the first frame update
@@ -98,6 +98,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+            shadow.SetActive(true);
             isJump = false;
         }
         if (collision.gameObject.CompareTag("Enemy"))
@@ -107,6 +108,14 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Finish"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex == 1 ? 0 : 1);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            shadow.SetActive(false);
         }
     }
 }
