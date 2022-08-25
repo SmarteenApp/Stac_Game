@@ -192,7 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1937448659978735834}
   m_Layer: 0
-  m_Name: Map
+  m_Name: Temp_Map
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
