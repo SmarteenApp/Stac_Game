@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class BottleAttack : MonoBehaviour
 {
     Animator anim;
     bool isAttack;  //공격중임 
