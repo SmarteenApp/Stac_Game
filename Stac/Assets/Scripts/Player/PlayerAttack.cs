@@ -35,8 +35,14 @@ public class PlayerAttack : MonoBehaviour
         while (true)
         {
             
-            if(anim.GetCurrentAnimatorStateInfo(0).nameHash == "Attack")
-            yield return null;
+            if(anim.GetCurrentAnimatorStateInfo(0).IsName("Bottle_Attack")&&
+                anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f) //anim 작동이 다 끝났을 때
+            {
+                isAttack = false;
+                yield break;
+            }
+                
+            yield return new WaitForEndOfFrame();
 
         }
 
