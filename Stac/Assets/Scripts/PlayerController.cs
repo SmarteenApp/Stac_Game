@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
 
     Animator animator;
     Rigidbody2D rb2D;
-    SpriteRenderer spriteRenderer;
 
     bool isJump;
 
@@ -29,7 +28,6 @@ public class PlayerController : MonoBehaviour
     {
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         transform.position = spawnPoint.position;
     }
 
@@ -45,12 +43,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Move()
     {
-        // transform.Translate(new Vector2(moveSlider.value, 0) * speed * Time.deltaTime);
-
-        rb2D.velocity = new Vector2(moveSlider.value * speed, rb2D.velocity.y);
-
-        spriteRenderer.flipX = moveSlider.value > 0;
-
+        transform.Translate(new Vector2(moveSlider.value, 0) * speed * Time.deltaTime);
         animator.SetBool("isWalk", moveSlider.value != 0);
     }
 
