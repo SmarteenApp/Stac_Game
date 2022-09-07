@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class BottleAttack : MonoBehaviour
 {
+
+
     Animator anim;
     bool isAttack;  //공격중임 
     private void Awake()
@@ -22,12 +23,16 @@ public class BottleAttack : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.P) && !isAttack)        //키 입력은 추후 UI 연결후 변경
         {
-            StartCoroutine(Attack());
+            Attack();
         }
     }
 
-   
-    IEnumerator Attack()
+    public void Attack()
+    {
+        StartCoroutine(AttackCoroutine());
+    }
+
+    IEnumerator AttackCoroutine()
     {
         isAttack = true;
 
