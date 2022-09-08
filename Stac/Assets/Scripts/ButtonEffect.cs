@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ButtonEffect : MonoBehaviour,IPointerClickHandler,IPointerDownHandler,IPointerUpHandler
+public class ButtonEffect : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
 {
 
     RectTransform RT;
     Vector3 size;
-    public void OnPointerClick(PointerEventData eventData)
-    {
-    }
+    [SerializeField]
+    GameObject touchEffect;
+    [SerializeField]
+    Canvas gameCanvas;
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -21,12 +22,15 @@ public class ButtonEffect : MonoBehaviour,IPointerClickHandler,IPointerDownHandl
     public void OnPointerUp(PointerEventData eventData)
     {
         RT.localScale = size;
+        var effect = Instantiate(touchEffect, eventData.position, Quaternion.identity);
+        effect.transform.parent = gameCanvas.transform;
+        Destroy(effect, 0.5f);
     }
 
     void Start()
     {
         RT = GetComponent<RectTransform>();
-
+        gameCanvas = GameObject.Find("GameCanvas").GetComponent<Canvas>();
         size = RT.localScale;
 
     }

@@ -306,7 +306,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3593774249239463569, guid: 58cc5039047069646ae624eb0e2bf106, type: 3}
   m_PrefabInstance: {fileID: 1399850407}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &510725827
+--- !u!114 &510725831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -318,6 +318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ec75f6f5adf4249b7d7957bc472165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  touchEffect: {fileID: 2757914480246961957, guid: 67d1450749009dc4fad6c16317f1276b, type: 3}
+  gameCanvas: {fileID: 0}
 --- !u!1 &646768453
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,12 +831,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ec75f6f5adf4249b7d7957bc472165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  touchEffect: {fileID: 2757914480246961957, guid: 67d1450749009dc4fad6c16317f1276b, type: 3}
+  gameCanvas: {fileID: 0}
 --- !u!1 &1851613404 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3593774249165887179, guid: 58cc5039047069646ae624eb0e2bf106, type: 3}
   m_PrefabInstance: {fileID: 1399850407}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1851613405
+--- !u!114 &1851613409
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -846,3 +850,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ec75f6f5adf4249b7d7957bc472165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  touchEffect: {fileID: 2757914480246961957, guid: 67d1450749009dc4fad6c16317f1276b, type: 3}
+  gameCanvas: {fileID: 0}
