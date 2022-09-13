@@ -6,8 +6,11 @@ public class BottleAttack : MonoBehaviour
     Rigidbody2D playerRigid;
     Animator anim;
     bool isAttack;  //공격중임 
+
+    GameObject particle;        //공격 파티클
     private void Awake()
     {
+        particle = GetComponentInChildren<ParticleSystem>().gameObject;
         playerRigid = GetComponentInParent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -25,6 +28,8 @@ public class BottleAttack : MonoBehaviour
         {
             Attack();
         }
+        particle.SetActive(isAttack);
+
     }
 
     private void FixedUpdate()
@@ -68,9 +73,9 @@ public class BottleAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.gameObject.TryGetComponent<Monster>(out Monster monster))
         {
-            Destroy(collision.gameObject);
+            monster.Dead();
         }
     }
 }

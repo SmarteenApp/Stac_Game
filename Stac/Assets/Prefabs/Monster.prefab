@@ -227,3 +227,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   isFindPlayer: 0
+  particle: {fileID: 1702492006303183867, guid: 606f9ac6604618d45b808dbca75235c7, type: 3}
