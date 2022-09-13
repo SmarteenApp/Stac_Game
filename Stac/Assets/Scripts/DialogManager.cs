@@ -22,7 +22,7 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
 
     public string currnetSentence;
 
-    public float typingSpeed = 0.1f;
+    public float typingSpeed = 0.05f;
     public float applyTypingSpeed;
     
     bool isTyping;
