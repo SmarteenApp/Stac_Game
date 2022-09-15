@@ -5580,7 +5580,7 @@ SpriteRenderer:
   m_Size: {x: 2.909091, y: 2.1818182}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1554081129
@@ -5595,9 +5595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e15c22cf393bba498c597ca461fe93a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRigid: {fileID: 0}
-  bottle: {fileID: 0}
-  isRight: 0
+  playerController: {fileID: 1625695895}
 --- !u!1 &1585810973
 GameObject:
   m_ObjectHideFlags: 0
