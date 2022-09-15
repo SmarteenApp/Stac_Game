@@ -5625,6 +5625,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92e8e3db7941c8d4fafa15aff14856b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1630850842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1554081126, guid: 39bf4647cbd099044a605897a6e2e4a5, type: 3}
+  m_PrefabInstance: {fileID: 8325786481177042095}
+  m_PrefabAsset: {fileID: 0}
+--- !u!68 &1630850846
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630850842}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.7327413, y: 0.30217344}
+  - {x: 0.3689795, y: 0.7215049}
+  - {x: 1.2430971, y: 1.8099568}
+  - {x: 1.7682133, y: 1.4014738}
+  - {x: 0.7581433, y: 0.29355025}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1001 &1975487502
 PrefabInstance:
   m_ObjectHideFlags: 0

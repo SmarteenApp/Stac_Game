@@ -37,4 +37,10 @@ public class Monster : MonoBehaviour
             }
         }
     }
+
+    public void Dead()
+    {
+        Debug.Log("몬스터 죽음");
+        Destroy(gameObject);
+    }
 }

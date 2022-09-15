@@ -65,4 +65,14 @@ public class AttackBottle : MonoBehaviour
         }
 
     }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent<Monster>(out Monster monster))
+        {
+            Debug.Log(monster.gameObject.name);
+            monster.Dead();
+            Debug.Log("¸ó½ºÅÍ Á×À½");
+        }
+    }
 }
