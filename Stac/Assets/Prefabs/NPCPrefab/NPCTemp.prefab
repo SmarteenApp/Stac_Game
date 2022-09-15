@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 7087827496254028872}
   - component: {fileID: 7087827496254028875}
   m_Layer: 0
-  m_Name: Square
+  m_Name: CanTalkImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
