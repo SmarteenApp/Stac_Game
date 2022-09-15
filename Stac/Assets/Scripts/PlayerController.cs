@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform spawnPoint; // 죽음 스폰 포인트
 
     Animator animator;
+    SpriteRenderer spriteRenderer;
     Rigidbody2D rb2D;
 
     bool isJump;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         transform.position = spawnPoint.position;
