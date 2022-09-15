@@ -45,7 +45,6 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Move()
     {
-        // transform.Translate(new Vector2(moveSlider.value, 0) * speed * Time.deltaTime);
 
         rb2D.velocity = new Vector2(moveSlider.value * speed, rb2D.velocity.y);
 
