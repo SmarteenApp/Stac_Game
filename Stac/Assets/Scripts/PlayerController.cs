@@ -6,19 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed; // ¼Óµµ
-    [SerializeField] private float jumpForce; // Á¡ÇÁ·Â
+    [SerializeField] private float speed; // ì†ë„
+    [SerializeField] private float jumpForce; // ì í”„ë ¥
 
-    [SerializeField] private KeyCode jumpKey; // Á¡ÇÁ Å°
+    [SerializeField] private KeyCode jumpKey; // ì í”„ í‚¤
 
-    [SerializeField] private Slider moveSlider; // ¿òÁ÷ÀÓ ½½¶óÀÌ´õ
+    [SerializeField] private Slider moveSlider; // ì›€ì§ì„ ìŠ¬ë¼ì´ë”
 
-    [SerializeField] private GameObject deadPanel; // Á×À½ ÆĞ³Î
-    [SerializeField] private GameObject shadow; // ±×¸²ÀÚ
+    [SerializeField] private GameObject deadPanel; // ì£½ìŒ íŒ¨ë„
+    [SerializeField] private GameObject shadow; // ê·¸ë¦¼ì
 
-    [SerializeField] private Transform spawnPoint; // Á×À½ ½ºÆù Æ÷ÀÎÆ®
+    [SerializeField] private Transform spawnPoint; // ì£½ìŒ ìŠ¤í° í¬ì¸íŠ¸
 
-    SpriteRenderer spriteRenderer;
     Animator animator;
     Rigidbody2D rb2D;
 
@@ -29,7 +28,6 @@ public class PlayerController : MonoBehaviour
     {
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         transform.position = spawnPoint.position;
     }
 
@@ -41,7 +39,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// ¿òÁ÷ÀÓ
+    /// ì›€ì§ì„
     /// </summary>
     private void Move()
     {
@@ -54,7 +52,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Á¡ÇÁ
+    /// ì í”„
     /// </summary>
     private void Jump()
     {
@@ -78,7 +76,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// ´É·Â
+    /// ëŠ¥ë ¥
     /// </summary>
     /// <param name="i"></param>
     private void OnAbilityButton(float i)
