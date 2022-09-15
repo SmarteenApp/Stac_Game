@@ -6,8 +6,8 @@ public class AttackBottle : MonoBehaviour
 {
     Rigidbody2D playerRigid;
 
-    GameObject bottle;
     bool isRight;
+    bool isAttack;      //공격 중인가?
 
     private void Awake()
     {
@@ -22,9 +22,7 @@ public class AttackBottle : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(playerRigid.velocity);
-
-        isRight = playerRigid.velocity.x < 0 ? true : false;
+        isRight = playerRigid.velocity.x < 0 ? false : true;
 
     }
 
@@ -33,10 +31,36 @@ public class AttackBottle : MonoBehaviour
     {
         transform.localScale = isRight ? new Vector3(1, 1, 1) : new Vector3(-1, 1, 1);
 
+
+
+        if (Input.GetKeyDown(KeyCode.Q) && !isAttack)    //공격키, 추후 변경 예정
+        {
+            StartCoroutine(Attack());
+            
+        }
     }
 
-    void Attack()
+    float timer;
+    float attackTime = 0.3f;   //공격 쿨탐
+    IEnumerator Attack()
     {
-        
+        Vector3 attckVec = new Vector3(0, 0, -60);
+        timer = 0;
+
+        while (true)
+        {
+            timer += Time.deltaTime;
+            transform.Rotate(attckVec * 30f * Time.deltaTime);
+
+            if(timer > attackTime)
+            {
+                transform.localRotation = Quaternion.identity;
+                yield break;
+            }
+            
+            
+            yield return new WaitForEndOfFrame();
+        }
+
     }
 }
