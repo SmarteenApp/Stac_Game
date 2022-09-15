@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     Rigidbody2D rb2D;
 
+    public bool canAttack;
     bool isJump;
 
     // Start is called before the first frame update
