@@ -46,6 +46,7 @@ public class AttackBottle : MonoBehaviour
     {
         Vector3 attckVec = new Vector3(0, 0, -60);
         timer = 0;
+        isAttack = true;
 
         while (true)
         {
@@ -55,6 +56,7 @@ public class AttackBottle : MonoBehaviour
             if(timer > attackTime)
             {
                 transform.localRotation = Quaternion.identity;
+                isAttack=false;
                 yield break;
             }
             
