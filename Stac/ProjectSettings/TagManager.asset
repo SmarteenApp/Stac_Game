@@ -6,9 +6,6 @@ TagManager:
   tags:
   - Ground
   - Enemy
-  - GlassBottle
-  - SpawnPoint
-  - Styrofoam
   layers:
   - Default
   - TransparentFX
