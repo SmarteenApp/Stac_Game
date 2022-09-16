@@ -189,6 +189,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &262340703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 262340704}
+  - component: {fileID: 262340705}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &262340704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262340703}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &262340705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262340703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16bc9a52db8ca1748a7bf5108082f7c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgList: []
+  bgSound: {fileID: 0}
+  bgmVolume: 0
+  sfxVolume: 0.53
 --- !u!1 &294363729
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,9 +1003,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8325786480646076984, guid: 39bf4647cbd099044a605897a6e2e4a5, type: 3}
+      propertyPath: jumpClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 753da44a17188f64eb7c58742f1e052b, type: 3}
+    - target: {fileID: 8325786480646076984, guid: 39bf4647cbd099044a605897a6e2e4a5, type: 3}
       propertyPath: deadPanel
       value: 
       objectReference: {fileID: 834089699}
+    - target: {fileID: 8325786480646076984, guid: 39bf4647cbd099044a605897a6e2e4a5, type: 3}
+      propertyPath: attackClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8e241786c711b664a9d6a5895844b6c8, type: 3}
     - target: {fileID: 8325786480646076984, guid: 39bf4647cbd099044a605897a6e2e4a5, type: 3}
       propertyPath: moveSlider
       value: 
@@ -967,6 +1022,10 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 680853655}
+    - target: {fileID: 8325786480646076984, guid: 39bf4647cbd099044a605897a6e2e4a5, type: 3}
+      propertyPath: footstepClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a3d29eb17cd2de246975b89432416fc3, type: 3}
     - target: {fileID: 8325786480646076988, guid: 39bf4647cbd099044a605897a6e2e4a5, type: 3}
       propertyPath: m_RootOrder
       value: 1
