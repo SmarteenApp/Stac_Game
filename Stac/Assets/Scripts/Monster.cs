@@ -11,6 +11,7 @@ public class Monster : MonoBehaviour
 
     [SerializeField] GameObject particle;   //죽은 다음 효과 이팩트 오브젝트
 
+    public AudioClip deadSound;
     public Transform PlayerTransform
     {
         get { return playerTransform; }
@@ -44,7 +45,7 @@ public class Monster : MonoBehaviour
     {
         GameObject go = Instantiate(particle,transform.position,Quaternion.identity);
         Destroy(go, 1f);
-
+        SoundManager.Instance.SFXPlay("MonsterDead", deadSound);
         Destroy(gameObject);
     }
 }
