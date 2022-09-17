@@ -1175,10 +1175,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7087827496254028873, guid: 78a5b4ad20031f948ba75cccd609ad72, type: 3}
-      propertyPath: m_Name
-      value: TalkImage
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78a5b4ad20031f948ba75cccd609ad72, type: 3}
 --- !u!1001 &8325786481177042095

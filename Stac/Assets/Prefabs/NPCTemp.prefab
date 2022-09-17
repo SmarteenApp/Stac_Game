@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322a4078b12521d4483d37f1fc5f03a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myType: 0
   talkIcon: {fileID: 7087827496254028873}
   activationDistance: 2.2
   sentences:
@@ -141,7 +142,7 @@ GameObject:
   - component: {fileID: 7087827496254028872}
   - component: {fileID: 7087827496254028875}
   m_Layer: 0
-  m_Name: Square
+  m_Name: TalkImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
