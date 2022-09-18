@@ -1,23 +1,25 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AttackBottle : MonoBehaviour
 {
     Rigidbody2D playerRigid;
+    [SerializeField]GameObject particle;        //파티클 오브젝트
 
     bool isRight;
     bool isAttack;      //공격 중인가?
 
     private void Awake()
     {
+        particle = GetComponentInChildren<ParticleSystem>().gameObject;
         playerRigid = GetComponentInParent<Rigidbody2D>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        particle.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -29,6 +31,7 @@ public class AttackBottle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.localPosition = isRight ? new Vector3(0.5f,0,0) : new Vector3(-0.5f,0,0);
         transform.localScale = isRight ? new Vector3(1, 1, 1) : new Vector3(-1, 1, 1);
 
 
@@ -47,7 +50,7 @@ public class AttackBottle : MonoBehaviour
         Vector3 attckVec = new Vector3(0, 0, -60);
         timer = 0;
         isAttack = true;
-
+        particle.SetActive(true);
         while (true)
         {
             timer += Time.deltaTime;
@@ -57,6 +60,7 @@ public class AttackBottle : MonoBehaviour
             {
                 transform.localRotation = Quaternion.identity;
                 isAttack=false;
+                particle.SetActive(false);
                 yield break;
             }
             

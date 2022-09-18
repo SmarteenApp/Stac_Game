@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
     public bool canAttack;
     bool isJump;
 
+    [Header("Item")]
+    public AttackBottle bottle;
+    public GameObject Styrofoam;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -108,13 +112,18 @@ public class PlayerController : MonoBehaviour
             shadow.SetActive(true);
             isJump = false;
         }
-        if (collision.gameObject.CompareTag("Enemy"))
+        else if (collision.gameObject.CompareTag("Enemy"))
         {
             Dead();
         }
-        if (collision.gameObject.CompareTag("Finish"))
+        else if (collision.gameObject.CompareTag("Finish"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex == 1 ? 0 : 1);
+        }
+        else if (collision.gameObject.CompareTag("deadLine"))
+        {
+            if (Styrofoam.activeSelf == false)
+                Dead();
         }
     }
 
