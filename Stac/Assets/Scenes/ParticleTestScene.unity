@@ -5767,6 +5767,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1554081127, guid: 39bf4647cbd099044a605897a6e2e4a5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7245
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554081127, guid: 39bf4647cbd099044a605897a6e2e4a5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7347
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554081127, guid: 39bf4647cbd099044a605897a6e2e4a5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.584
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554081127, guid: 39bf4647cbd099044a605897a6e2e4a5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.079
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554081128, guid: 39bf4647cbd099044a605897a6e2e4a5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8325786480646076984, guid: 39bf4647cbd099044a605897a6e2e4a5, type: 3}
       propertyPath: deadPanel
       value: 
