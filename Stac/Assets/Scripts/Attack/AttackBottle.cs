@@ -45,6 +45,17 @@ public class AttackBottle : MonoBehaviour
         }
     }
 
+    public void attackButtonFunc()
+    {
+        if (isAttack)
+            return;
+        if (!gameObject.activeSelf)
+            return;
+           
+        StartCoroutine(Attack());
+
+    }
+
     float timer;
     float attackTime = 0.3f;   //°ø°Ý ÄðÅ½
     IEnumerator Attack()
