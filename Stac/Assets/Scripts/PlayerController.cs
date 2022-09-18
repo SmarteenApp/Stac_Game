@@ -150,6 +150,10 @@ public class PlayerController : MonoBehaviour
             if (Styrofoam.activeSelf == false)
                 Dead();
         }
+        else if (collision.gameObject.CompareTag("EndWall"))
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
