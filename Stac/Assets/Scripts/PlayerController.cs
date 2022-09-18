@@ -25,9 +25,16 @@ public class PlayerController : MonoBehaviour
     public bool canAttack;
     bool isJump;
 
+
+    [Header("Sound")]
+    public AudioClip footstepClip;
+    public AudioClip jumpClip;
+    public AudioClip attackClip;
+
     [Header("Item")]
     public AttackBottle bottle;
     public GameObject Styrofoam;
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +43,7 @@ public class PlayerController : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         transform.position = spawnPoint.position;
+        StartCoroutine(footstepCo());
     }
 
     // Update is called once per frame
@@ -58,6 +66,22 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isWalk", moveSlider.value != 0);
     }
 
+    IEnumerator footstepCo()
+    {
+
+        while (true)
+        {
+            yield return null;
+
+            if (moveSlider.value != 0 && !isJump)
+            {
+                SoundManager.Instance.SFXPlay("footstep", footstepClip);
+            }
+
+            yield return new WaitForSeconds(0.4f);
+        }
+    }
+
     /// <summary>
     /// 점프
     /// </summary>
@@ -67,6 +91,7 @@ public class PlayerController : MonoBehaviour
         {
             // transform.Translate(new Vector2(0, jumpForce * Time.deltaTime));
             rb2D.AddForce(Vector2.up * jumpForce);
+            SoundManager.Instance.SFXPlay("Jump",jumpClip);
             isJump = true;
             animator.SetTrigger("Jump");
         }
@@ -75,7 +100,7 @@ public class PlayerController : MonoBehaviour
     public void OnJumpButton()
     {
         if (isJump == false)
-        {
+        {   
             rb2D.AddForce(Vector2.up * jumpForce);
             isJump = true;
             animator.SetTrigger("Jump");

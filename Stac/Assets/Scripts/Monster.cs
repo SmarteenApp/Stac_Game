@@ -6,7 +6,8 @@ public class Monster : MonoBehaviour
 {
     SpriteRenderer sprite;
     [SerializeField] private float speed;
-    public bool isRigit;        //ÀÌµ¿ ¹æÇâ ºÒ
+    public bool isRigit;        //Ã€ÃŒÂµÂ¿ Â¹Ã¦Ã‡Ã¢ ÂºÃ’
+
 
     private void Awake()
     {
@@ -48,7 +49,7 @@ public class Monster : MonoBehaviour
 
     public void Dead()
     {
-        Debug.Log("¸ó½ºÅÍ Á×À½");
+        Debug.Log("Â¸Ã³Â½ÂºÃ…Ã ÃÃ—Ã€Â½");
         Destroy(gameObject);
     }
 }
