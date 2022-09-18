@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb2D;
 
+    bool isDead;
     public bool canAttack;
     bool isJump;
 
@@ -49,6 +50,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDead) return;
+
         Move();
         Jump();
     }
@@ -58,6 +61,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Move()
     {
+        
 
         rb2D.velocity = new Vector2(moveSlider.value * speed, rb2D.velocity.y);
 
@@ -119,14 +123,18 @@ public class PlayerController : MonoBehaviour
 
     private void Dead()
     {
-        deadPanel.SetActive(true);
-        transform.position = spawnPoint.position;
+        isDead = true;
         StartCoroutine(DeadDelay());
     }
 
     private IEnumerator DeadDelay()
     {
+        animator.SetTrigger("Dead");
+        yield return new WaitForSeconds(0.3f);
+        deadPanel.SetActive(true);
+        transform.position = spawnPoint.position;
         yield return new WaitForSeconds(1f);
+        isDead = false;
         deadPanel.SetActive(false);
     }
 
