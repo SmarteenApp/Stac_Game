@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
+    SpriteRenderer sprite;
     [SerializeField] private float speed;
     public bool isRigit;        //이동 방향 불
 
+    private void Awake()
+    {
+        sprite = GetComponent<SpriteRenderer>();
+    }
 
     private void Start()
     {
@@ -16,6 +21,7 @@ public class Monster : MonoBehaviour
 
     void Update()
     {
+        sprite.flipX = isRigit ? false : true;
         Move();
     }
 
