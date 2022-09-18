@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
     public bool canAttack;
     bool isJump;
 
+    [Header("Item")]
+    public AttackBottle bottle;
+
     // Start is called before the first frame update
     void Start()
     {

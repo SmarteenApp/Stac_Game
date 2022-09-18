@@ -46,7 +46,8 @@ public class NPCController : MonoBehaviour
         if (isActivation && !isTalkingBefore)
         {
             isTalkingBefore = true;
-            DialogManager.Instance.Ondialogue(sentences);
+            string[] s = sentences;
+            DialogManager.Instance.Ondialogue(s);
             CheckItem();
         }
     }
@@ -55,7 +56,9 @@ public class NPCController : MonoBehaviour
     {
         switch (myType)
         {
-            case NPCType.Bottle:   
+            case NPCType.Bottle:
+                player.bottle.gameObject.SetActive(true);
+                gameObject.SetActive(false);
                 break;
             case NPCType.Box:
                 break;
