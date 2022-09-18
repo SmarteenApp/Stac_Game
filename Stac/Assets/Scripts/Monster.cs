@@ -4,43 +4,52 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
+    SpriteRenderer sprite;
     [SerializeField] private float speed;
-    public bool isFindPlayer; // ¹üÀ§ ³»¿¡ ÇÃ·¹ÀÌ¾î°¡ µé¾î¿ÔÀ» ¶§
+    public bool isRigit;        //Ã€ÃŒÂµÂ¿ Â¹Ã¦Ã‡Ã¢ ÂºÃ’
 
-    Transform playerTransform; // ÇÃ·¹ÀÌ¾î À§Ä¡
 
-    public Transform PlayerTransform
+    private void Awake()
     {
-        get { return playerTransform; }
-        set { playerTransform = value; }
+        sprite = GetComponent<SpriteRenderer>();
     }
-     
+
+    private void Start()
+    {
+        StartCoroutine(MoveDirection());
+    }
+
+
     void Update()
     {
-        FollowPlayer();
+        sprite.flipX = isRigit ? false : true;
+        Move();
     }
 
-    /// <summary>
-    /// ÇÃ·¹ÀÌ¾î¸¦ ÂÑ¾Æ°¡´Â ÇÔ¼ö
-    /// </summary>
-    void FollowPlayer()
+    private void Move()
     {
-        if (isFindPlayer)
+        Vector2 moveVec = isRigit ? Vector2.right : Vector2.left;
+
+        transform.Translate(moveVec * speed * Time.deltaTime);
+    }
+
+    IEnumerator MoveDirection()
+    {
+        while (true)
         {
-            if (playerTransform.position.x > transform.position.x)
-            {
-                transform.Translate(speed * Time.deltaTime * Vector2.right);
-            }
-            else if (playerTransform.position.x < transform.position.x)
-            {
-                transform.Translate(speed * Time.deltaTime * Vector2.left);
-            }
+            isRigit = false;
+            yield return new WaitForSeconds(3f);
+            isRigit = true;
+            yield return new WaitForSeconds(3f);
+
         }
+
+
     }
 
     public void Dead()
     {
-        Debug.Log("¸ó½ºÅÍ Á×À½");
+        Debug.Log("Â¸Ã³Â½ÂºÃ…Ã ÃÃ—Ã€Â½");
         Destroy(gameObject);
     }
 }

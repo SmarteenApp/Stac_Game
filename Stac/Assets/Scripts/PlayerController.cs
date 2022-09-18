@@ -6,22 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed; // ¼Óµµ
-    [SerializeField] private float jumpForce; // Á¡ÇÁ·Â
+    [SerializeField] private float speed; // ì†ë„
+    [SerializeField] private float jumpForce; // ì í”„ë ¥
 
-    [SerializeField] private KeyCode jumpKey; // Á¡ÇÁ Å°
+    [SerializeField] private KeyCode jumpKey; // ì í”„ í‚¤
 
-    [SerializeField] private Slider moveSlider; // ¿òÁ÷ÀÓ ½½¶óÀÌ´õ
+    [SerializeField] private Slider moveSlider; // ì›€ì§ì„ ìŠ¬ë¼ì´ë”
 
-    [SerializeField] private GameObject deadPanel; // Á×À½ ÆĞ³Î
-    [SerializeField] private GameObject shadow; // ±×¸²ÀÚ
+    [SerializeField] private GameObject deadPanel; // ì£½ìŒ íŒ¨ë„
+    [SerializeField] private GameObject shadow; // ê·¸ë¦¼ì
 
-    [SerializeField] private Transform spawnPoint; // Á×À½ ½ºÆù Æ÷ÀÎÆ®
+    [SerializeField] private Transform spawnPoint; // ì£½ìŒ ìŠ¤í° í¬ì¸íŠ¸
 
-    SpriteRenderer spriteRenderer;
     Animator animator;
+    SpriteRenderer spriteRenderer;
     Rigidbody2D rb2D;
 
+    public bool canAttack;
     bool isJump;
 
 
@@ -30,12 +31,17 @@ public class PlayerController : MonoBehaviour
     public AudioClip jumpClip;
     public AudioClip attackClip;
 
+    [Header("Item")]
+    public AttackBottle bottle;
+    public GameObject Styrofoam;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         transform.position = spawnPoint.position;
         StartCoroutine(footstepCo());
     }
@@ -48,11 +54,10 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// ¿òÁ÷ÀÓ
+    /// ì›€ì§ì„
     /// </summary>
     private void Move()
     {
-        // transform.Translate(new Vector2(moveSlider.value, 0) * speed * Time.deltaTime);
 
         rb2D.velocity = new Vector2(moveSlider.value * speed, rb2D.velocity.y);
 
@@ -78,7 +83,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Á¡ÇÁ
+    /// ì í”„
     /// </summary>
     private void Jump()
     {
@@ -103,7 +108,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// ´É·Â
+    /// ëŠ¥ë ¥
     /// </summary>
     /// <param name="i"></param>
     private void OnAbilityButton(float i)
@@ -132,13 +137,18 @@ public class PlayerController : MonoBehaviour
             shadow.SetActive(true);
             isJump = false;
         }
-        if (collision.gameObject.CompareTag("Enemy"))
+        else if (collision.gameObject.CompareTag("Enemy"))
         {
             Dead();
         }
-        if (collision.gameObject.CompareTag("Finish"))
+        else if (collision.gameObject.CompareTag("Finish"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex == 1 ? 0 : 1);
+        }
+        else if (collision.gameObject.CompareTag("deadLine"))
+        {
+            if (Styrofoam.activeSelf == false)
+                Dead();
         }
     }
 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2286467771354768038}
   - component: {fileID: 2286467771354768039}
   - component: {fileID: 2286467771354768036}
+  - component: {fileID: 3097623573864940505}
   m_Layer: 0
   m_Name: obj15
   m_TagString: Ground
@@ -51,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4625e6c9670c1b4498421e8f1cae88a4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: acfdaddd880663d45bbcefdaf754a5bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4203de2a53e56034383ab21be4577338, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,13 +100,27 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -1.699322, y: -4.136032}
-  - {x: -3.2427804, y: -2.4487}
-  - {x: -3.2032123, y: 4.1224437}
-  - {x: 3.182348, y: 4.1079326}
-  - {x: 0.9323623, y: -3.1069736}
-  - {x: -1.6740384, y: -4.1066985}
+  - {x: -1.2334218, y: -4.8038225}
+  - {x: -3.5533807, y: -2.5574098}
+  - {x: -2.3801217, y: 4.790234}
+  - {x: 3.586128, y: 3.393552}
+  - {x: 1.2584927, y: -3.976654}
+  - {x: -1.1926081, y: -4.805549}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &3097623573864940505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2286467771354768037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00324f4514d17394cbf63c9dbfad39e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
+  outlineSize: 10
