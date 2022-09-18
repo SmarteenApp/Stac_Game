@@ -12,7 +12,7 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
     public static DialogManager Instance { get { return instance; } }
 
 
-    
+
 
     public Text dialogueText;
     public GameObject nextText;
@@ -24,7 +24,7 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
 
     public float typingSpeed = 0.05f;
     public float applyTypingSpeed;
-    
+
     bool isTyping;
     public bool isTutorial;
 
@@ -92,7 +92,7 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
 
     void Update()
     {
-        // 대사 한줄 끝
+        // ´??? ???? ³¡
         if (dialogueText.text.Equals(currnetSentence))
         {
             nextText.SetActive(true);

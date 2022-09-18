@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class NPCController : MonoBehaviour
 {
+    public enum NPCType
+    {
+        Bottle,     //유리병
+        Box,        //스티로폼
+        ETC         //기타
+    }
+
+    public NPCType myType;
+
     PlayerController player;
     public GameObject talkIcon;
 
@@ -37,8 +46,29 @@ public class NPCController : MonoBehaviour
         if (isActivation && !isTalkingBefore)
         {
             isTalkingBefore = true;
-            DialogManager.Instance.Ondialogue(sentences);
-
+            string[] s = sentences;
+            DialogManager.Instance.Ondialogue(s);
+            CheckItem();
         }
     }
+
+    void CheckItem()
+    {
+        switch (myType)
+        {
+            case NPCType.Bottle:
+                player.bottle.gameObject.SetActive(true);
+                gameObject.SetActive(false);
+                break;
+            case NPCType.Box:
+                player.Styrofoam.SetActive(true);
+                gameObject.SetActive(false);
+                break;
+            case NPCType.ETC:
+                break;
+            default:
+                break;
+        }
+    }
+
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2037615712481445101}
   - component: {fileID: 2037615712481445098}
   - component: {fileID: 4470587515114792618}
+  - component: {fileID: 5060804363619418567}
   m_Layer: 0
   m_Name: obj6
   m_TagString: Ground
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037615712481445100}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 104.5, y: 14.9, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4625e6c9670c1b4498421e8f1cae88a4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ba5ad14249b175440bef1a1316eb41cd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db87275693d03624897f3a51f4c2b85b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,16 +97,35 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.07}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -3.0560586, y: 1.3357182}
-  - {x: 0.44812775, y: 2.1831503}
-  - {x: 2.29916, y: 2.1868525}
-  - {x: 3.1374702, y: -0.9559984}
-  - {x: -2.0555763, y: -2.2405539}
-  - {x: -3.092848, y: 1.3357177}
+  - {x: -2.8947926, y: 1.2750102}
+  - {x: -2.8987918, y: 1.2888665}
+  - {x: -2.8853877, y: 1.28296}
+  - {x: 0.90751594, y: 2.1028938}
+  - {x: 2.265677, y: 2.4135091}
+  - {x: 3.064705, y: -1.0895228}
+  - {x: -1.5223045, y: -2.212614}
+  - {x: -1.5761566, y: -2.0509748}
+  - {x: -2.0002365, y: -2.14931}
+  - {x: -2.2167892, y: -2.0664463}
+  - {x: -2.883163, y: 1.235317}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &5060804363619418567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037615712481445100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00324f4514d17394cbf63c9dbfad39e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
+  outlineSize: 10

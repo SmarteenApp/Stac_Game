@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - GlassBottle
+  - SpawnPoint
+  - Styrofoam
+  - deadLine
   layers:
   - Default
   - TransparentFX
