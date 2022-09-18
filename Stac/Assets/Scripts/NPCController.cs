@@ -61,6 +61,8 @@ public class NPCController : MonoBehaviour
                 gameObject.SetActive(false);
                 break;
             case NPCType.Box:
+                player.Styrofoam.SetActive(true);
+                gameObject.SetActive(false);
                 break;
             case NPCType.ETC:
                 break;
