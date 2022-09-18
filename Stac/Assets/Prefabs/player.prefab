@@ -5205,6 +5205,3 @@ MonoBehaviour:
   deadPanel: {fileID: 0}
   shadow: {fileID: 2813462303414607001}
   spawnPoint: {fileID: 0}
-  footstepClip: {fileID: 0}
-  jumpClip: {fileID: 0}
-  attackClip: {fileID: 0}
