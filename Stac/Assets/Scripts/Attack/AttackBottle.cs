@@ -10,10 +10,12 @@ public class AttackBottle : MonoBehaviour
     bool isRight;
     bool isAttack;      //공격 중인가?
 
+    PlayerController player;
     private void Awake()
     {
         particle = GetComponentInChildren<ParticleSystem>().gameObject;
         playerRigid = GetComponentInParent<Rigidbody2D>();
+        player = GetComponentInParent<PlayerController>();
     }
 
     // Start is called before the first frame update
@@ -51,11 +53,12 @@ public class AttackBottle : MonoBehaviour
         timer = 0;
         isAttack = true;
         particle.SetActive(true);
+        SoundManager.Instance.SFXPlay("Player Attack", player.attackClip);
+
         while (true)
         {
             timer += Time.deltaTime;
             transform.Rotate(attckVec * 30f * Time.deltaTime);
-
             if(timer > attackTime)
             {
                 transform.localRotation = Quaternion.identity;

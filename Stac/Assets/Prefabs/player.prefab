@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1554081127
 Transform:
   m_ObjectHideFlags: 0
@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e15c22cf393bba498c597ca461fe93a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
 --- !u!68 &1630850846
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -9860,6 +9861,7 @@ Transform:
   - {fileID: 3442843704184717525}
   - {fileID: 1554081127}
   - {fileID: 1948034406}
+  - {fileID: 8477539325135089643}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10000,3 +10002,74 @@ MonoBehaviour:
   shadow: {fileID: 2813462303414607001}
   spawnPoint: {fileID: 0}
   canAttack: 0
+  footstepClip: {fileID: 8300000, guid: a3d29eb17cd2de246975b89432416fc3, type: 3}
+  jumpClip: {fileID: 8300000, guid: 753da44a17188f64eb7c58742f1e052b, type: 3}
+  attackClip: {fileID: 8300000, guid: 8e241786c711b664a9d6a5895844b6c8, type: 3}
+  bottle: {fileID: 1554081129}
+  Styrofoam: {fileID: 0}
+--- !u!1001 &8325786480135159096
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8325786480646076988}
+    m_Modifications:
+    - target: {fileID: 445125912453731027, guid: 55874924666588d44a0699d76973fc96, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 445125912453731027, guid: 55874924666588d44a0699d76973fc96, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 445125912453731027, guid: 55874924666588d44a0699d76973fc96, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.714
+      objectReference: {fileID: 0}
+    - target: {fileID: 445125912453731027, guid: 55874924666588d44a0699d76973fc96, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 445125912453731027, guid: 55874924666588d44a0699d76973fc96, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 445125912453731027, guid: 55874924666588d44a0699d76973fc96, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 445125912453731027, guid: 55874924666588d44a0699d76973fc96, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 445125912453731027, guid: 55874924666588d44a0699d76973fc96, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 445125912453731027, guid: 55874924666588d44a0699d76973fc96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 445125912453731027, guid: 55874924666588d44a0699d76973fc96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 445125912453731027, guid: 55874924666588d44a0699d76973fc96, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446820359519643309, guid: 55874924666588d44a0699d76973fc96, type: 3}
+      propertyPath: m_Name
+      value: Styrofoam
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446820359519643309, guid: 55874924666588d44a0699d76973fc96, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 55874924666588d44a0699d76973fc96, type: 3}
+--- !u!4 &8477539325135089643 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 445125912453731027, guid: 55874924666588d44a0699d76973fc96, type: 3}
+  m_PrefabInstance: {fileID: 8325786480135159096}
+  m_PrefabAsset: {fileID: 0}
