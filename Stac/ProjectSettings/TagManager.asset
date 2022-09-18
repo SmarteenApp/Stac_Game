@@ -9,6 +9,7 @@ TagManager:
   - GlassBottle
   - SpawnPoint
   - Styrofoam
+  - deadLine
   layers:
   - Default
   - TransparentFX

@@ -4,47 +4,51 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
+    SpriteRenderer sprite;
     [SerializeField] private float speed;
-    public bool isFindPlayer; // 범위 내에 플레이어가 들어왔을 때
+    public bool isRigit;        //이동 방향 불
 
-    Transform playerTransform; // 플레이어 위치
-
-    [SerializeField] GameObject particle;   //죽은 다음 효과 이팩트 오브젝트
-
-    public Transform PlayerTransform
+    private void Awake()
     {
-        get { return playerTransform; }
-        set { playerTransform = value; }
+        sprite = GetComponent<SpriteRenderer>();
     }
-     
+
+    private void Start()
+    {
+        StartCoroutine(MoveDirection());
+    }
+
+
     void Update()
     {
-        FollowPlayer();
+        sprite.flipX = isRigit ? false : true;
+        Move();
     }
 
-    /// <summary>
-    /// 플레이어를 쫓아가는 함수
-    /// </summary>
-    void FollowPlayer()
+    private void Move()
     {
-        if (isFindPlayer)
+        Vector2 moveVec = isRigit ? Vector2.right : Vector2.left;
+
+        transform.Translate(moveVec * speed * Time.deltaTime);
+    }
+
+    IEnumerator MoveDirection()
+    {
+        while (true)
         {
-            if (playerTransform.position.x > transform.position.x)
-            {
-                transform.Translate(speed * Time.deltaTime * Vector2.right);
-            }
-            else if (playerTransform.position.x < transform.position.x)
-            {
-                transform.Translate(speed * Time.deltaTime * Vector2.left);
-            }
+            isRigit = false;
+            yield return new WaitForSeconds(3f);
+            isRigit = true;
+            yield return new WaitForSeconds(3f);
+
         }
+
+
     }
 
     public void Dead()
     {
-        GameObject go = Instantiate(particle,transform.position,Quaternion.identity);
-        Destroy(go, 1f);
-
+        Debug.Log("몬스터 죽음");
         Destroy(gameObject);
     }
 }
