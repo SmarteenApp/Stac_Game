@@ -183,8 +183,9 @@ MonoBehaviour:
   talkIcon: {fileID: 1687059420}
   activationDistance: 2.2
   sentences:
-  - "\uC774 \uC815\uB3C4\uBA74 \uBB54\uAC00 \uB54C\uB824 \uB215\uD790 \uC218 \uC788\uC744
-    \uAC83\uAC19\uB2E4."
+  - "\uC548\uB155 \uB098\uB294 \uC720\uB9AC\uBCD1"
+  - "\uB0B4\uAC00 \uC788\uC73C\uBA74 \uC800 \uAD34\uBB3C\uB4E4\uC744 \uBB34\uCC0C\uB97C
+    \uC218 \uC788\uC744\uAEBC\uC57C"
 --- !u!61 &2047534674
 BoxCollider2D:
   m_ObjectHideFlags: 0
