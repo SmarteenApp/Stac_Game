@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -226,8 +226,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -306,7 +306,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 379.3557}
+  m_AnchoredPosition: {x: 0, y: -384}
   m_SizeDelta: {x: 0, y: -758.7114}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2017839068
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.8235294}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1030,6 +1030,7 @@ GameObject:
   - component: {fileID: 3593774249165887223}
   - component: {fileID: 3593774249165887176}
   - component: {fileID: 3593774249165887177}
+  - component: {fileID: 1498792858}
   m_Layer: 5
   m_Name: BoxButton
   m_TagString: Untagged
@@ -1138,6 +1139,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1498792858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3593774249165887179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ec75f6f5adf4249b7d7957bc472165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchEffect: {fileID: 0}
+  gameCanvas: {fileID: 0}
 --- !u!1 &3593774249239463569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,6 +1165,7 @@ GameObject:
   - component: {fileID: 3593774249239463581}
   - component: {fileID: 3593774249239463582}
   - component: {fileID: 3593774249239463583}
+  - component: {fileID: 835234977}
   m_Layer: 5
   m_Name: BottleButton
   m_TagString: Untagged
@@ -1270,6 +1286,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &835234977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3593774249239463569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ec75f6f5adf4249b7d7957bc472165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchEffect: {fileID: 0}
+  gameCanvas: {fileID: 0}
 --- !u!1 &3593774249583909624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,6 +1635,7 @@ GameObject:
   - component: {fileID: 3593774250360523317}
   - component: {fileID: 3593774250360523318}
   - component: {fileID: 3593774250360523319}
+  - component: {fileID: 1887838320}
   m_Layer: 5
   m_Name: JumpButton
   m_TagString: Untagged
@@ -1725,6 +1756,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1887838320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3593774250360523273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ec75f6f5adf4249b7d7957bc472165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchEffect: {fileID: 0}
+  gameCanvas: {fileID: 0}
 --- !u!1 &3593774250474770075
 GameObject:
   m_ObjectHideFlags: 0

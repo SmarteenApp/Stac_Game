@@ -109,6 +109,7 @@ public class PlayerController : MonoBehaviour
         {   
             rb2D.AddForce(Vector2.up * jumpForce);
             isJump = true;
+            SoundManager.Instance.SFXPlay("Jump", jumpClip);
             animator.SetTrigger("Jump");
         }
     }

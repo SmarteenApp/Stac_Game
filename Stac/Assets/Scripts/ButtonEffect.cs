@@ -22,15 +22,11 @@ public class ButtonEffect : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         RT.localScale = size;
-        var effect = Instantiate(touchEffect, eventData.position, Quaternion.identity);
-        effect.transform.parent = gameCanvas.transform;
-        Destroy(effect, 0.5f);
     }
 
     void Start()
     {
         RT = GetComponent<RectTransform>();
-        gameCanvas = GameObject.Find("GameCanvas").GetComponent<Canvas>();
         size = RT.localScale;
 
     }
