@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
     public AttackBottle bottle;
     public GameObject Styrofoam;
 
+    public bool isClearDialoge = false;
+    public string[] clearSentences;
 
     // Start is called before the first frame update
     void Start()
@@ -156,7 +158,18 @@ public class PlayerController : MonoBehaviour
         else if (collision.gameObject.CompareTag("deadLine"))
         {
             if (Styrofoam.activeSelf == false)
+            {
                 Dead();
+                return;
+            }
+
+            isJump = false;
+            if (!isClearDialoge)
+            {
+                DialogManager.Instance.Ondialogue(clearSentences);
+                isClearDialoge = true;
+            }
+
         }
         else if (collision.gameObject.CompareTag("EndWall"))
         {
