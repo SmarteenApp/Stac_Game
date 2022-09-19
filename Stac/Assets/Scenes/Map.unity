@@ -353,6 +353,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5992966961547752055, guid: f0d836fe41a0986458c683968cfbb9b5, type: 3}
+      propertyPath: m_TagString
+      value: deadLine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0d836fe41a0986458c683968cfbb9b5, type: 3}
 --- !u!1001 &484596917
@@ -479,7 +483,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -621,6 +625,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2675618713606302690, guid: 58cc5039047069646ae624eb0e2bf106, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2675618713606302690, guid: 58cc5039047069646ae624eb0e2bf106, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2675618713606302690, guid: 58cc5039047069646ae624eb0e2bf106, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3593774249239463583, guid: 58cc5039047069646ae624eb0e2bf106, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -917,6 +933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgList:
   - {fileID: 8300000, guid: ec23979fcd7da9c41ae569dd50eed3ba, type: 3}
+  - {fileID: 8300000, guid: 9f079d084743fd84a98dd93ffe7956fe, type: 3}
   bgSound: {fileID: 1807625351}
   bgmVolume: 0.6
   sfxVolume: 0.6

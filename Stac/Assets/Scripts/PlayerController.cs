@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
                 SoundManager.Instance.SFXPlay("footstep", footstepClip);
             }
 
-            yield return new WaitForSeconds(0.4f);
+            yield return new WaitForSeconds(0.55f);
         }
     }
 

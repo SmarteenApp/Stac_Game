@@ -28,7 +28,6 @@ public class SoundManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        BgSoundPlay(bgList[0]); //юс╫ц
     }
 
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
