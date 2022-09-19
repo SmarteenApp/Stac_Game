@@ -9837,9 +9837,9 @@ GameObject:
   - component: {fileID: 8325786480646076988}
   - component: {fileID: 8325786480646076989}
   - component: {fileID: 8325786480646076985}
-  - component: {fileID: 8325786480646076986}
   - component: {fileID: 8325786480646076987}
   - component: {fileID: 8325786480646076984}
+  - component: {fileID: 1474016847}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -9937,32 +9937,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &8325786480646076986
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8325786480646076990}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.2522802, y: 1.536}
-    newSize: {x: 2.44586, y: 3}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.2522802, y: 1.536}
-  m_EdgeRadius: 0
 --- !u!95 &8325786480646076987
 Animator:
   serializedVersion: 3
@@ -10006,7 +9980,23 @@ MonoBehaviour:
   jumpClip: {fileID: 8300000, guid: 753da44a17188f64eb7c58742f1e052b, type: 3}
   attackClip: {fileID: 8300000, guid: 8e241786c711b664a9d6a5895844b6c8, type: 3}
   bottle: {fileID: 1554081129}
-  Styrofoam: {fileID: 0}
+  Styrofoam: {fileID: 3097515865945938837}
+--- !u!58 &1474016847
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8325786480646076990}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.2}
+  serializedVersion: 2
+  m_Radius: 0.6
 --- !u!1001 &8325786480135159096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10068,6 +10058,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55874924666588d44a0699d76973fc96, type: 3}
+--- !u!1 &3097515865945938837 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6446820359519643309, guid: 55874924666588d44a0699d76973fc96, type: 3}
+  m_PrefabInstance: {fileID: 8325786480135159096}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8477539325135089643 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 445125912453731027, guid: 55874924666588d44a0699d76973fc96, type: 3}

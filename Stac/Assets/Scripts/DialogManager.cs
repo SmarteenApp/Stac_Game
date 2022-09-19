@@ -14,7 +14,7 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
 
 
 
-    public Text dialogueText;
+    public TextMeshProUGUI dialogueText;
     public GameObject nextText;
     public CanvasGroup dialogueGroup;
 
