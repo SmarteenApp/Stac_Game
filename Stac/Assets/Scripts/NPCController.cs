@@ -16,12 +16,15 @@ public class NPCController : MonoBehaviour
     PlayerController player;
     public GameObject talkIcon;
 
-    public float activationDistance = 2.2f;
+    public float activationDistance = 3f;
     bool isActivation;
     bool isTalkingBefore;
 
     [SerializeField]
     string[] sentences;
+    [SerializeField] string[] endSentence;   //대화를 끝냈을 때 다시 대화
+
+
     void Start()
     {
         player = GameObject.FindWithTag("Player")?.GetComponent<PlayerController>();
@@ -43,10 +46,16 @@ public class NPCController : MonoBehaviour
 
     private void OnMouseDown()  
     {
-        if (isActivation && !isTalkingBefore)
+        if (isActivation)
         {
-            isTalkingBefore = true;
-            string[] s = sentences;
+
+            string[] s = null;
+
+            if (isTalkingBefore)
+                s = endSentence;
+            else 
+                s = sentences;
+
             DialogManager.Instance.Ondialogue(s);
             CheckItem();
         }
@@ -65,6 +74,7 @@ public class NPCController : MonoBehaviour
                 gameObject.SetActive(false);
                 break;
             case NPCType.ETC:
+                isTalkingBefore = true;
                 break;
             default:
                 break;
