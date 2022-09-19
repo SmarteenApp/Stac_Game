@@ -608,11 +608,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 445125912453731027, guid: 982fc891cfd8f334ab3507b43ea80002, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 179.51501
+      value: 179.635
       objectReference: {fileID: 0}
     - target: {fileID: 445125912453731027, guid: 982fc891cfd8f334ab3507b43ea80002, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 126.719376
+      value: 126.584
       objectReference: {fileID: 0}
     - target: {fileID: 445125912453731027, guid: 982fc891cfd8f334ab3507b43ea80002, type: 3}
       propertyPath: m_LocalPosition.z
@@ -773,11 +773,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlassBottleNPC
       objectReference: {fileID: 0}
-    - target: {fileID: 5991462224018005905, guid: 036b9640f764b6449bcbfaed7c1f0871, type: 3}
-      propertyPath: sentences.Array.data[0]
-      value: "\uC774 \uC815\uB3C4\uBA74 \uBB54\uAC00 \uB54C\uB824 \uB215\uD790 \uC218
-        \uC788\uC744 \uAC83 \uAC19\uB2E4."
-      objectReference: {fileID: 0}
     - target: {fileID: 7939350933543637173, guid: 036b9640f764b6449bcbfaed7c1f0871, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -861,6 +856,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 116851618, guid: 58cc5039047069646ae624eb0e2bf106, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.5499878
+      objectReference: {fileID: 0}
+    - target: {fileID: 116851618, guid: 58cc5039047069646ae624eb0e2bf106, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.46002197
+      objectReference: {fileID: 0}
+    - target: {fileID: 834089704, guid: 58cc5039047069646ae624eb0e2bf106, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 834089704, guid: 58cc5039047069646ae624eb0e2bf106, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 834089704, guid: 58cc5039047069646ae624eb0e2bf106, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017839064, guid: 58cc5039047069646ae624eb0e2bf106, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.6920166
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017839064, guid: 58cc5039047069646ae624eb0e2bf106, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -384.79602
+      objectReference: {fileID: 0}
     - target: {fileID: 2675618713606302690, guid: 58cc5039047069646ae624eb0e2bf106, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
